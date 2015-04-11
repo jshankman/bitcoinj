@@ -70,7 +70,15 @@ public final class Coin implements Monetary, Comparable<Coin>, Serializable {
      */
     public static final Coin SATOSHI = Coin.valueOf(1);
 
+    /*
+    * The base mining reward for BitCoin is 50 BTC
+    */
     public static final Coin FIFTY_COINS = COIN.multiply(50);
+    
+    /**
+     * The base mining reward for PointCoin is 10 PTC 
+     */
+     public static final Coin TEN_COINS = COIN.multiply(10);
 
     /**
      * Represents a monetary value of minus one satoshi.
