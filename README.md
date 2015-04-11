@@ -1,9 +1,6 @@
-Build status: [![Build Status](https://travis-ci.org/bitcoinj/bitcoinj.png?branch=master)](https://travis-ci.org/bitcoinj/bitcoinj)  
-Coverage status: [![Coverage Status](https://coveralls.io/repos/bitcoinj/bitcoinj/badge.png?branch=master)](https://coveralls.io/r/bitcoinj/bitcoinj?branch=master)
+### Welcome to pointcoinj
 
-### Welcome to bitcoinj
-
-The bitcoinj library is a Java implementation of the Bitcoin protocol, which allows it to maintain a wallet and send/receive transactions without needing a local copy of Bitcoin Core. It comes with full documentation and some example apps showing how to use it.
+The pointcoinj library is a Java implementation of the PointCoin protocol, which allows it to maintain a wallet and send/receive transactions without needing a local copy of PointCoin Core. It comes with full documentation and some example apps showing how to use it. It is mostly a fork of bitcoinj done on April 11th, 2015.
 
 ### Technologies
 
@@ -40,7 +37,7 @@ These are found in the `examples` module.
 
 #### Forwarding service
 
-This will download the block chain and eventually print a Bitcoin address that it has generated.
+This will download the block chain and eventually print a PointCoin address that it has generated.
 
 If you send coins to that address, it will forward them on to the address you specified.
 
@@ -51,7 +48,3 @@ If you send coins to that address, it will forward them on to the address you sp
 
 Note that this example app *does not use checkpointing*, so the initial chain sync will be pretty slow. You can make an app that starts up and does the initial sync much faster by including a checkpoints file; see the documentation for
 more info on this technique.
-
-### Where next?
-
-Now you are ready to [follow the tutorial](https://bitcoinj.github.io/getting-started).
