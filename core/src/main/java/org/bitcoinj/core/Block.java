@@ -36,7 +36,7 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
-import static org.bitcoinj.core.Coin.FIFTY_COINS;
+import static org.bitcoinj.core.Coin.TEN_COINS;
 import static org.bitcoinj.core.Utils.doubleDigest;
 import static org.bitcoinj.core.Utils.doubleDigestTwoBuffers;
 
@@ -170,7 +170,7 @@ public class Block extends Message {
      * </p>
      */
     public Coin getBlockInflation(int height) {
-        return FIFTY_COINS.shiftRight(height / params.getSubsidyDecreaseBlockCount());
+        return TEN_COINS.shiftRight(height / params.getSubsidyDecreaseBlockCount());
     }
 
     private void readObject(ObjectInputStream ois) throws ClassNotFoundException, IOException {
@@ -996,7 +996,7 @@ public class Block extends Message {
      */
     @VisibleForTesting
     public Block createNextBlock(Address to, long time) {
-        return createNextBlock(to, null, time, pubkeyForTesting, FIFTY_COINS);
+        return createNextBlock(to, null, time, pubkeyForTesting, TEN_COINS);
     }
 
     /**
@@ -1012,7 +1012,7 @@ public class Block extends Message {
         if (to != null) {
             // Add a transaction paying 50 coins to the "to" address.
             Transaction t = new Transaction(params);
-            t.addOutput(new TransactionOutput(params, t, FIFTY_COINS, to));
+            t.addOutput(new TransactionOutput(params, t, TEN_COINS, to));
             // The input does not really need to be a valid signature, as long as it has the right general form.
             TransactionInput input;
             if (prevOut == null) {
@@ -1047,7 +1047,7 @@ public class Block extends Message {
 
     @VisibleForTesting
     public Block createNextBlock(@Nullable Address to, TransactionOutPoint prevOut) {
-        return createNextBlock(to, prevOut, getTimeSeconds() + 5, pubkeyForTesting, FIFTY_COINS);
+        return createNextBlock(to, prevOut, getTimeSeconds() + 5, pubkeyForTesting, TEN_COINS);
     }
 
     @VisibleForTesting
@@ -1057,7 +1057,7 @@ public class Block extends Message {
 
     @VisibleForTesting
     public Block createNextBlock(@Nullable Address to) {
-        return createNextBlock(to, FIFTY_COINS);
+        return createNextBlock(to, TEN_COINS);
     }
 
     @VisibleForTesting
@@ -1071,7 +1071,7 @@ public class Block extends Message {
      */
     @VisibleForTesting
     Block createNextBlockWithCoinbase(byte[] pubKey) {
-        return createNextBlock(null, null, Utils.currentTimeSeconds(), pubKey, FIFTY_COINS);
+        return createNextBlock(null, null, Utils.currentTimeSeconds(), pubKey, TEN_COINS);
     }
 
     @VisibleForTesting
