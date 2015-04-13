@@ -36,7 +36,7 @@ public class TestNet3Params extends NetworkParameters {
         targetTimespan = TARGET_TIMESPAN;
         maxTarget = Utils.decodeCompactBits(0x1d00ffffL);
         port = 22228;
-        addressHeader = 111;
+        addressHeader = 56;
         p2shHeader = 196;
         acceptableAddressCodes = new int[] { addressHeader, p2shHeader };
         dumpedPrivateKeyHeader = 239;
