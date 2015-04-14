@@ -43,7 +43,7 @@ public class MainNetParams extends NetworkParameters {
         bip32HeaderPriv = 0x0488ADE4; //The 4 byte header that serializes in base58 to "xprv"
 
         genesisBlock.setDifficultyTarget(0x1d00ffffL);
-        genesisBlock.setTime(1231006505L);
+        genesisBlock.setTime(1401292357L);
         genesisBlock.setNonce(2083236893);
         id = ID_MAINNET;
         subsidyDecreaseBlockCount = 210000;
