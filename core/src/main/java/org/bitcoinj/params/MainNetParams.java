@@ -42,14 +42,14 @@ public class MainNetParams extends NetworkParameters {
         bip32HeaderPub = 0x0488B21E; //The 4 byte header that serializes in base58 to "xpub".
         bip32HeaderPriv = 0x0488ADE4; //The 4 byte header that serializes in base58 to "xprv"
 
-        genesisBlock.setDifficultyTarget(0x1d00ffffL);
+        genesisBlock.setDifficultyTarget(0x207fffffL);
         genesisBlock.setTime(1401292357L);
-        genesisBlock.setNonce(2083236893);
+        genesisBlock.setNonce(2);
         id = ID_MAINNET;
         subsidyDecreaseBlockCount = 400000;
         spendableCoinbaseDepth = 5;
         String genesisHash = genesisBlock.getHashAsString();
-        checkState(genesisHash.equals("000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"),
+        checkState(genesisHash.equals("683e86bd5c6d110d91b94b97137ba6bfe02dbbdb8e3dff722a669b5d69d77af6"),
                 genesisHash);
 
         // This contains (at a minimum) the blocks which are not BIP30 compliant. BIP30 changed how duplicate
